@@ -1,0 +1,84 @@
+(Algorithm with I, P, O)
+### Comments:
+Not sure what is meant by "This algorithm doesn't have any control structures, but just uses input, processing and output."
+###
+
+--- Pseudocode:
+    get dose
+    get yield
+    brewRatio = yield / dose
+    display brewRatio
+---
+
+
+(Algorithm with Decision)
+--- Pseudocode:
+    get price
+    get availableMoney
+    if price <= availableMoney
+        display Can buy product
+    else
+        display Can not buy product
+---
+
+
+(Algorithm with Repetition)
+--- Pseudocode:
+    while items on ground
+        pick item up
+        put item away
+---
+
+
+(Problem Decomposition)
+--- Question 1:
+"A doctor needs to be able to calculate the total amount of a drug that has been administered to a patient.
+ The system will get the hourly dosage from the user, as well as the number of hours they have been receiving
+ the medicine. The system will then display the total for the doctor."
+
+ Nouns: Doctor, Drug, Patient, Dosage, User, Medicine, System
+ Verbs: Calculate, Administered, Receiving, Display
+
+ -- Pseudocode:
+    get hourly dosage
+    get number hours receiving
+    calculate total amount drugs from hourly do dosage and number hours received
+    display total amount drugs
+ --
+---
+
+--- Question 2:
+"Happy Photos needs a way to calculate the total charge for a customer's booking. The system will use the customer's
+ name and the date of the booking to make a unique booking id. The hourly charge, and number of hours will be entered,
+ and the total charge and id code will be displayed."
+
+ Nouns: Photos, Customer's, System, Name, Booking,
+ Verbs: Calculate, Make, Entered, Displayed
+
+ -- Pseudocode:
+    get name
+    get date
+    get hourly charge
+    get number of hours
+    create id from name and date
+    calculate total charge from hourly charge and number of hours
+    display id
+    display total charge
+ --
+---
+
+--- Question 3:
+"A road trip planning system will ask the user for the distance travelled (in km) and the travel time in minutes.
+ The user will then be shown the average speed (in km/hour) over the trip."
+
+ Nouns: "Road Trip", System, User, Distance, "Travel Time"
+ Verbs: Planning, Ask, Shown
+
+ -- pseudocode:
+    get distance
+    get travel time
+    average speed = distance / (travel time / 60)
+    display average speed
+ --
+---
+

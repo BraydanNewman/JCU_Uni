@@ -1,0 +1,20 @@
+(Quick Questions)
+--- Answers:
+    1) password, username
+    2) a, variable1
+    3) #1, number\1
+    4) Module Names = alllowercase (all lower case)
+       Normal Variables Names = lower_snake_case (lower snake case)
+       Class Names = UpperCamelCase (upper camel case)
+       Constant variable names = ALLUPPERCASE (all upper case)
+    5) A constant variable is a variable that doesnt change in your program, an example may be a file path that is used
+       multiple times
+    6) Reference answer number 4
+---
+
+(Logic Exercise)
+--- Answer:
+    3
+    This is because evn in the worst case scenario the first 2 socks are different colours the 3rd sock has to be the
+    same colour as one of the first ones as there are only 2 sock colours
+---
