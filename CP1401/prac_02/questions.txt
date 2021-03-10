@@ -7,8 +7,8 @@
        Normal Variables Names = lower_snake_case (lower snake case)
        Class Names = UpperCamelCase (upper camel case)
        Constant variable names = ALLUPPERCASE (all upper case)
-    5) A constant variable is a variable that doesnt change in your program, an example may be a file path that is used
-       multiple times
+    5) A constant variable doesnt change in your program, an example may be a file path that is used
+       multiple times throughout the program
     6) Reference answer number 4
 ---
 

@@ -1,0 +1,38 @@
+(Quick Questions)
+###
+    a = 2
+    b = 3
+    c = 4
+###
+--- Answers:
+    1)  "!="
+    2)  "<="
+    3)  True    (11>8)
+    4)  True    (62>256) but "True or"
+    6)  True
+    7)  True
+---
+
+
+(Patterns)
+--- Answers:
+    1)  if-elif-else
+    2)  if-else
+    3)  if, if, if...
+    4)  if-elif-else
+    5)  if, no else
+    6)  if-else
+    7)  if-elif-else
+---
+
+
+(Logic Exercise)
+###
+    "Alice is the youngest unless Bill is, and that if Carl isn't the youngest then Alice is the oldest."
+###
+--- Answers:
+    Alice: Oldest
+    Carl: Middle
+    Bill: Youngest
+---
+

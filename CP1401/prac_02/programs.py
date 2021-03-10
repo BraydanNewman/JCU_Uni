@@ -1,3 +1,4 @@
+# 1: Discount Price
 def discount_price():
     original_price = int(input("Original Price: "))
     discount = original_price * 0.2
@@ -5,12 +6,14 @@ def discount_price():
     print(f"New Price: {new_price}")
 
 
+# 2: Kilometers to Miles
 def kilometres_to_miles():
     distances_km = int(input("Distance in Kilometers: "))
     distances_mi = distances_km * 0.62137
     print(f"Distance in Miles: {distances_mi}")
 
 
+# 3: Holiday Cost
 def holiday_cost():
     food_cost = int(input("Daily food cost: $"))
     activity_cost = int(input("Daily activities cost: $"))
@@ -19,6 +22,7 @@ def holiday_cost():
     print(f"Total holiday cost: {total}")
 
 
+# 4: I-Stop Calculation
 def i_stop_calculation():
     i_stop_on = int(input("i-stop on in seconds: "))
     time_stopped = int(input("Time stopped in seconds: "))
@@ -30,6 +34,9 @@ def i_stop_calculation():
     print(f"Percentage: {percentage}%")
 
 
+# Practice and Extension
+
+# BMI Calculator
 def bmi_calculator():
     height = int(input("Height: "))
     weight = int(input("Weight: "))
@@ -37,6 +44,7 @@ def bmi_calculator():
     print(f"BMI: {bmi}")
 
 
+# Number Conversion
 def number_conversion():
     print("1) Kilograms to pounds")
     print("2) Pounds to Kilograms")
@@ -65,7 +73,6 @@ def number_conversion():
         number_conversion()
 
 
-
 if __name__ == "__main__":
     # Uncomment the function you'd like to use
 
@@ -75,4 +82,3 @@ if __name__ == "__main__":
     # i_stop_calculation()
     # bmi_calculator()
     number_conversion()
-
