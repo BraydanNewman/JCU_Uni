@@ -1,0 +1,46 @@
+(Quick Questions)
+--- Answers:
+    1)  Ctrl+/
+    2)  For and While loops
+    3)  A sentinel is the name given to the variable that
+        signals the finish condition for a loop
+    4)  Violates Python Naming convention,
+        Does not describe what the variable is holding.
+    5)  augmented assignment operators are operators that
+        take in a variable as one argument the returns it as the same variable
+---
+
+
+(Loop outputs)
+--- Answers:
+    1)  "0 1 2 3 4 5"
+    2)  "33 34 35 36 37 38"
+    3)  "17 16 15 14 13 12"
+    4)  "1 0 1 0 1 0 1 0 1 0"
+    5)  "100>64>36>16>4>"
+---
+
+
+(Range values)
+--- Answers:
+    1)  range(6)
+    2)  range(1, 14, 4)
+    3)  range(3,0,-1)
+    4)  range(7, -6, -3)
+---
+
+
+(Patterns)
+--- Answers:
+    1)  While
+    2)  While
+    3)  For
+    4)  For
+    5)  For
+---
+
+
+(Logic Exercise)
+--- Answers:
+    2
+---
