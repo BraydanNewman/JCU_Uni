@@ -33,10 +33,11 @@ nav ul li:hover {
 }
 
 header {
-    height: 200px;
+    height: auto;
     margin-bottom: 10px;
     padding: 20px;
     background-color: rgba(0,0,0,0.15);
+    overflow: auto;
 }
 
 p {
@@ -47,6 +48,32 @@ p {
     margin-top: 20px;
     padding-bottom: 20px;
     background-color: rgba(0, 0, 0, 0.15);
+    min-width: 812px;
+}
+
+.content-nt {
+    background-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    padding: 10px;
+    min-width: 812px;
+}
+
+.login {
+    background-color: rgba(0, 0, 0, 0.15);
+    width: 45%;
+    float: left;
+    padding-bottom: 100%;
+    margin-bottom: -100%;
+    padding-left: 10px;
+}
+
+.sign-up {
+    background-color: rgba(0, 0, 0, 0.15);
+    width: 45%;
+    float: right;
+    padding-bottom: 100%;
+    margin-bottom: -100%;
+    padding-left: 10px;
 }
 
 .content h1 {
@@ -83,7 +110,15 @@ p {
     font-size: 20px;
 }
 
+.nav-button {
+    float: right;
+    border-left: solid 1px #2c2e38;
+    border-right: solid 1px #2c2e38;
+}
 
+.nav-button a {
+    text-decoration: none;
+}
 
 .bannerImg-left {
     float: left;
@@ -114,37 +149,58 @@ p {
 
     position: relative;
     background-color: #D7CCB7;
-    height: 300px;
     background-size:cover;
     background-position:center center;
     overflow: hidden;
-    width:90%;
+    width: 750px;
+    height: 400px;
     color:#fff;
-    margin: 5%
+    margin: 20px auto;
+}
+
+.table-cell-nt h2 {
+    background-color: rgba(0,0,0,0.8);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.table-cell-nt h3 {
+    background-color: rgba(0,0,0,0.8);
+    padding: 10px;
+    font-size: 10px;
+    border-radius: 5px;
+}
+
+.condition {
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .main_menu {
     margin-top: 20px;
     overflow: auto;
+}
 
+.menu-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .square {
-    float: left;
-    position: relative;
-    width: 30%;
-    padding-bottom: 30%;
-    margin: 1.66%;
-    overflow: hidden;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
     background-position:center center;
     background-repeat:no-repeat;
-    background-size:cover;
+    background-size: cover;
     color:#fff
-
 }
 
+
 .salad{
-    background-image: url("images/salad.jpg");
+    background-image: url("images/salad.png");
 }
 
 .frenchToast{
@@ -168,7 +224,7 @@ p {
 }
 
 .mac {
-    background-image: url("images/macNcheese.jpeg")
+    background-image: url("images/macNcheese.jpg")
 }
 
 .donuts {
@@ -187,11 +243,43 @@ p {
     background-image: url("images/sushi.jpg")
 }
 
+.allday {
+    background-image: url("images/allDayBreakfas.jpg")
+}
+
+.breakfast {
+    background-image: url("images/breakfast.jpg")
+}
+
+.classic-b {
+    background-image: url("images/clasicB.png")
+}
+
+.eggs-b {
+    background-image: url("images/eggsB.jpg")
+}
+
+.everything-b {
+    background-image: url("images/everythingB.jpg")
+}
+
+.vegan-b {
+    background-image: url("images/veganB.jpg")
+}
+
+.croissant-b {
+    background-image: url("images/croissant.jpg")
+}
+
+.eggs-on-toast-b {
+    background-image: url("images/eggsontoastB.jpg")
+}
+
 .contents_square {
-    position:absolute;
     height:90%;
     width:90%;
     padding: 5%;
+    margin:auto;
 
 }
 
@@ -210,6 +298,21 @@ p {
     font-weight: bold;
     opacity: 0;
     transition: 0.1s;
+}
+
+.table-cell-nt {
+    display:table-cell;
+    vertical-align:middle;
+    text-align: center;
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+.table-cell-nt div {
+    width: 50%;
+    margin-left:auto;
+    margin-right: auto;
 }
 
 .table-cell:hover {
@@ -246,4 +349,23 @@ footer ul li {
 footer img {
     margin: 10px;
     float: left;
+}
+
+.entry {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.15);
+    color: #000000;
+}
+
+.post-ref {
+    text-decoration: none;
+}
+
+.announcements p {
+    padding: 20px;
+}
+
+.announcements img {
+    margin: 20px
 }
