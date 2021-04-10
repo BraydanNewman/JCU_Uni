@@ -24,25 +24,47 @@ def time_of_day():
 
 def coffee_orders():
     # Cost goes small, medium, large in lists (that's just logical)
-    # Wanted to avoid "MAGIC NUMBER" when doing the white coffee
     BLACK_COFFEE_COST = [3, 4, 5]
-    WHITE_COFFEE_COST = [4, 5, 6]
+    WHITE_COST_ADD = 1
 
-    coffee_type = input("(B)lack or (W)hite Coffee: ").upper()
-    size = input("Size - (S)mall, (M)edium or (L)arge").upper()
+    total = 0
 
-    if coffee_type == "B":
+    while True:
+        coffee_type = input("(B)lack or (W)hite Coffee: ").upper()
+        size = input("Size - (S)mall, (M)edium or (L)arge").upper()
+
         if size == "S":
-            pass
+            total = BLACK_COFFEE_COST[0]
         elif size == "M":
-            pass
-        else:
-            pass
-    else:
-        pass
+            total = BLACK_COFFEE_COST[1]
+        elif size == "L":
+            total = BLACK_COFFEE_COST[2]
+
+        if coffee_type == "W" and total != 0:
+            total += WHITE_COST_ADD
+            break
+        elif  coffee_type == "B":
+            break
+
+        print("Invalid Input(s)")
+
+    print(f"Total: {total}")
+
+def low_high_printing():
+    number_1 = int(input("First number: "))
+    number_2 = int(input("Second number: "))
+
+    total = 0
+    for i in range(number_1, number_2+1):
+        total += i
+        print(i, end=" ")
+    print(f"totals: {total}")
+
 
 
 
 
 if __name__ == "__main__":
-    percentage_program()
+    # percentage_program()
+    # coffee_orders()
+    low_high_printing()

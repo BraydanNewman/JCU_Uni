@@ -80,6 +80,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\CP1401\prac_05\happy_products.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\CP1401\prac_05\prpgrams.py">
           <value>
             <Attribute>
@@ -130,6 +137,13 @@
           </value>
         </entry>
         <entry key="\CP1406\assesment_01\static\style.css">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\CP1406\assesment_01\website\announcements_home.html">
           <value>
             <Attribute>
               <option name="separator" value=":" />
