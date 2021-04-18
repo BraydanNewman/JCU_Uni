@@ -1,0 +1,20 @@
+(Quick Questions)
+--- Answers:
+    1) At the top, but below all imports
+    2) a) If variable was confide to a function scope you can have the same variable name for two different values in 2 different functions
+       b) Cant be limited to one part bof the code
+    3) Scopes
+    4) Break Point
+    5) Honestly dont know
+    6)
+---
+
+(Good Names)
+--- Answers:
+    1) determine_grade
+    2) convert_USD_to_AUD
+    3) print_report
+    4) calculate_average
+    5) determine_if_even
+    6) get_n_check_salary
+---
