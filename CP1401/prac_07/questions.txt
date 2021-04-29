@@ -6,15 +6,18 @@
     3) Scopes
     4) Break Point
     5) Honestly dont know
-    6)
+    6) Re-Usability
 ---
 
-(Good Names)
---- Answers:
-    1) determine_grade
-    2) convert_USD_to_AUD
-    3) print_report
-    4) calculate_average
-    5) determine_if_even
-    6) get_n_check_salary
+(Logic Exercise)
+--- Answer:
+    NORTH QUEENSLAND IN THE SPRING
+---
+
+(Debugging)
+--- Answer:
+    1) Instead of call the function you are assigning the whole function to that variable
+    2) When setting up the for statement, instead of giving it a rang it is given a single number
+    3) Instead of returning the variable from the function called it prints and returns nothing to the base function getting the value "None"
+    4) It Doesnt actually add the increment to the age before printing it to the screen
 ---

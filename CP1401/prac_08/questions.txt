@@ -1,0 +1,20 @@
+(Quick Questions)
+--- Answers:
+    1) Tuples can be changed where as lists are mutable
+    2) Same as other variable, lower case separated with _
+    3) cities = [] (already plural)
+    4) 536,870,912 elements (regular 32bit system)
+    5) False
+    6) len can be used on any object (str, int, list, tuple, bytes)
+---
+
+(Lists Warmup)
+--- Answer:
+    1) 0
+    2) 81
+    3) 81
+    4) True
+    5) False
+    6) 60
+    7) 4
+---

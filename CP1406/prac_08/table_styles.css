@@ -1,0 +1,67 @@
+table caption {
+    font-size: 1.5em;
+    padding: 10px 5px;
+}
+
+th, td:nth-child(1) {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+tfoot tr:nth-child(1n+2) {
+    font-size: .9em;
+    font-weight: normal;
+    text-align: left;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+table, th, td { border: none; }
+
+thead { background-color: #a7a37e; }
+
+tbody tr:nth-child(even) { background-color: #efecca; }
+
+tfoot tr:nth-child(odd) { background-color: #efecca; }
+
+@media only screen and (max-width: 780px){
+    table, thead, tbody, tfoot, tr, th, td { display: block; }
+
+     thead tr, tfoot tr:nth-of-type(1) {
+         position: absolute;
+         top: -9999px;
+         left: -9999px;
+     }
+
+     tfoot tr td {
+         padding-left: 0;
+         text-align: left;
+     }
+
+     td:before {
+         position: static;
+         top: 5px;
+         left: 5px;
+         white-space: nowrap;
+         text-align: left;
+     }
+
+     body td:nth-child(1):before {
+         content: "CMS";
+    }
+    tbody td:nth-child(2):before {
+        content: "Usage*";
+    }
+    tbody td:nth-child(3):before {
+        content: "+/- since Jan";
+    }
+    tbody td:nth-child(4):before {
+        content: "Market Share*";
+    }
+    tbody td:nth-child(5):before {
+        content: "+/- since Jan";
+    }
+}
