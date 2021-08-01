@@ -1,5 +1,56 @@
+"""
+CP1401 2021-1 Assignment 2
+Market Garden Simulator
+Student Name: Braydan Newman
+Date started: 10/5/2021
+Pseudocode:
+    LOW_RAINFALL_THRESHOLD = 30
+
+    Display start_message
+
+    Initialise List plants
+    Initialise Integer food
+    Initialise Integer day_count
+
+    While True
+        Display users stats
+        Display menu
+
+        Get choice from user
+
+        If choice Is wait day
+            Increment day_count
+            Check rain_amount
+
+            If rain_amount is below low_rainfall_threshold
+                Delete plant is plants list
+
+            Calculate food_produced From plants
+            Add food_produced to food
+
+        Else If choice Is display Plants
+            Display plants
+
+        Else If choice Is add plant
+            Get plant_name from user
+
+            If plant_name Is Valid
+                Add plant_name to plants
+            Else
+                Display invalid plant name
+
+        Else If choice Is quit
+            Break Out Of Loop
+
+        Else
+            Display invalid choice
+
+    Display quit dialog
+"""
+
 import random
 
+# Set constants
 RAIN_ART = """                             000      00
                            0000000   0000
               0      00  00000000000000000
@@ -39,21 +90,13 @@ MENU = """
 
 MIN_RAINFALL = 0
 MAX_RAINFALL = 100
-LOW_RAINFALL_THRESHOLD = 90
+LOW_RAINFALL_THRESHOLD = 30
 START_PLANTS = [ 'Tomato', 'Pumpkin', 'Watermelon' ]
 START_FOOD = 0
 
 
-def get_valid_number(prompt, min_number, max_number, error_message=None):
-    while True:
-        number = float(input(prompt))
-        if min_number <= number <= max_number:
-            return number
-        if error_message:
-            print(error_message)
-
-
 def print_quit_dialogue(plants, day_count, food):
+    """ Print the quit dialogue for the end of the simulation """
     if len(plants) == 0:
         print("You finished with no plants")
     else:
@@ -65,14 +108,14 @@ def print_quit_dialogue(plants, day_count, food):
 
 
 def add_new_plant(plants, food):
+    """ Add new plants to plants list depending of food requirements """
     new_plant = input("Enter plant name: ").title()
+    # Checks to see if plants are nor eligible or to expensive to be added to plants list
     if new_plant.isspace() or len(new_plant) == 0:
         print("Invalid Plant Name")
-        return plants, food
-    if new_plant.title() in plants:
+    elif new_plant.title() in plants:
         print("Plant Already Exists")
-        return plants, food
-    if food >= len(new_plant):
+    elif food >= len(new_plant):
         food = food - len(new_plant)
         plants.append(new_plant)
     else:
@@ -81,15 +124,18 @@ def add_new_plant(plants, food):
 
 
 def wait_a_day(plants, food):
+    """ Simulate waiting a day """
     if len(plants) != 0:
         rain_amount = random.randint(MIN_RAINFALL, MAX_RAINFALL)
         print(f"Rainfall: {rain_amount}mm")
 
+        # Checks is plant should be deleted
         if rain_amount < LOW_RAINFALL_THRESHOLD:
             dead_plant = random.choice(plants)
             print(f"Sadly, your {dead_plant} plant has died.")
             plants.remove(dead_plant)
 
+        # Lists all plants and food produced
         for plant in plants:
             food_rain_cast = random.randint(int(rain_amount/2), rain_amount)
             food_produced = int(food_rain_cast/100 * len(plant))
@@ -104,6 +150,7 @@ def wait_a_day(plants, food):
 
 
 def main():
+    """ Main looping function """
     print(RAIN_ART)
     print(TITLE_TEXT)
     print(WELCOME)

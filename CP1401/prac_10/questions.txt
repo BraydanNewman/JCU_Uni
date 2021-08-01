@@ -1,0 +1,15 @@
+(Quick Questions)
+--- Answers:
+    1) 'r' is read a file and 'w' is write a file
+    2)  AA file object is all the information like meta data contents and name in one object
+    3)  having the file open takes up memory and system resources
+    4)
+    5)  filename.split(".")[-1]
+    6)  5
+---
+
+(Logic Exercise)
+--- Answers:
+    0
+---
+
