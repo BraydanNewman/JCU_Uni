@@ -19,12 +19,17 @@ def main():
     print("\t1 or more numbers")
     if SPECIAL_CHARS_REQUIRED:
         print("\tand 1 or more special characters: ", SPECIAL_CHARACTERS)
+    password = get_password()
+    print("Your {}-character password is valid: {}".format(len(password),
+                                                           password))
+
+
+def get_password():
     password = input("> ")
     while not is_valid_password(password):
         print("Invalid password!")
         password = input("> ")
-    print("Your {}-character password is valid: {}".format(len(password),
-                                                           password))
+    return password
 
 
 def is_valid_password(password):
