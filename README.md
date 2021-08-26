@@ -8,8 +8,6 @@
 
 #### TODO:
 CP1402:
-1. Prac_02
-2. Prac_04
 3. Prac_05
 4. Assessment Case Study
 
