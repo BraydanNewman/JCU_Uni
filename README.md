@@ -17,7 +17,6 @@ CP1404:
 3. Assessment 1 Travel Tracker
 
 CP1407:
-1. Prac_02
-2. Prac_03
-3. Prac_04
+2. Prac_04
+3. Prac_05
 4. Assessment 1 - Building and Testing Classifications in WEKA
