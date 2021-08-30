@@ -6,6 +6,7 @@ GitHub URL: https://github.com/BraydanNewman/uni_pracs/tree/master/CP1404
 """
 
 import csv
+import random
 from operator import itemgetter
 
 NAME_INDEX = 0
@@ -32,11 +33,27 @@ def main():
 
     print(f"{len(csv_list)} loaded from {CSV_FILENAME}")
 
-    list_places(csv_list)
+    while True:
+        print(MENU_ITEMS)
+        user_selection = input(">>>").upper()
+        if user_selection == "L":
+            list_places(csv_list)
+        elif user_selection == "R":
+            pass
+        elif user_selection == "A":
+            pass
+        elif user_selection == "M":
+            pass
+        elif user_selection == "Q":
+            break
+        else:
+            print("Invalid menu choice")
 
-    # while True:
-    #     print(MENU_ITEMS)
-    #     break
+
+def recommend_random_place(csv_list):
+    unvisited_place = [unvisited_place for unvisited_place in csv_list if unvisited_place[VISITED_INDEX] == "n"]
+    chosen_place = random.choice(unvisited_place)
+    print(f"{chosen_place}")
 
 
 def sort_places(csv_list):
@@ -65,14 +82,18 @@ def length_of_longest_item(csv_list, index):
 
 def list_places(csv_list):
     sorted_csv = sort_places(csv_list)
+    unvisited_count = 0
     for index, item in enumerate(sorted_csv):
         if item[VISITED_INDEX] == 'n':
             visited_visual = "*"
+            unvisited_count += 1
         else:
             visited_visual = ""
         print(f"{visited_visual:1} {index:{len(str(len(csv_list)))}}. "
               f"{item[NAME_INDEX]:{length_of_longest_item(csv_list, NAME_INDEX)}} in "
-              f"{item[COUNTRY_INDEX]:{length_of_longest_item(csv_list, COUNTRY_INDEX)}}")
+              f"{item[COUNTRY_INDEX]:{length_of_longest_item(csv_list, COUNTRY_INDEX)}} "
+              f"{item[PRIORITY_INDEX]:>{length_of_longest_item(csv_list, PRIORITY_INDEX)}}")
+    print(f"{len(csv_list)} places. You still want to visit {unvisited_count} places.")
 
 
 def open_file(filename):
