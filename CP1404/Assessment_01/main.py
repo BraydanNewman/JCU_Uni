@@ -39,16 +39,49 @@ def main():
         if user_selection == "L":
             list_places(csv_list)
         elif user_selection == "R":
-            recommend_random_place(csv_list)
+            if num_of_unvisited_places(csv_list) > 0:
+                recommend_random_place(csv_list)
+            else:
+                print(f"No places left to visit!")
         elif user_selection == "A":
-            pass
+            csv_list = add_new_place(csv_list)
         elif user_selection == "M":
-            list_places(csv_list)
-            mark_place_visited(csv_list)
+            if num_of_unvisited_places(csv_list) > 0:
+                list_places(csv_list)
+                csv_list = mark_place_visited(csv_list)
+            else:
+                print(f"No unvisited places")
         elif user_selection == "Q":
             break
         else:
             print("Invalid menu choice")
+
+
+def add_new_place(csv_list):
+    name = error_check_user_input("Name: ")
+    country = error_check_user_input("Country: ")
+    priority = error_check_user_input("Priority: ")
+
+    print(f"{name} in {country} (priority {priority}) added to Travel Tracker")
+
+    csv_list.append([name, country, priority, "v"])
+    return csv_list
+
+
+def error_check_user_input(prompt):
+    while True:
+        user_input = input(prompt)
+        if user_input != "":
+            return user_input
+        print("Input can not be blank")
+
+
+def num_of_unvisited_places(csv_list):
+    count = 0
+    for place in csv_list:
+        if place[VISITED_INDEX] == "n":
+            count += 1
+    return count
 
 
 def mark_place_visited(csv_list):
@@ -68,11 +101,14 @@ def mark_place_visited(csv_list):
             print("Invalid place number")
             continue
         if sorted_csv[user_selection - 1][VISITED_INDEX] == "n":
-            sorted_csv[user_selection - 1][VISITED_INDEX] = "v"
-            print(f"{sorted_csv[user_selection - 1][NAME_INDEX]} in {sorted_csv[user_selection - 1][COUNTRY_INDEX]} visited!")
+            place_in_csv_list = csv_list.index(sorted_csv[user_selection - 1])
+            csv_list[place_in_csv_list][VISITED_INDEX] = "v"
+            print(f"{sorted_csv[user_selection - 1][NAME_INDEX]} in "
+                  f"{sorted_csv[user_selection - 1][COUNTRY_INDEX]} visited!")
+            return csv_list
         else:
             print(f"You have already visited {sorted_csv[user_selection - 1][NAME_INDEX]}")
-            break
+            return csv_list
 
 
 def recommend_random_place(csv_list):
@@ -119,7 +155,10 @@ def list_places(csv_list):
               f"{item[NAME_INDEX]:{length_of_longest_item(csv_list, NAME_INDEX)}} in "
               f"{item[COUNTRY_INDEX]:{length_of_longest_item(csv_list, COUNTRY_INDEX)}} "
               f"{item[PRIORITY_INDEX]:>{length_of_longest_item(csv_list, PRIORITY_INDEX)}}")
-    print(f"{len(csv_list)} places. You still want to visit {unvisited_count} places.")
+    if unvisited_count == 0:
+        print(f"{len(csv_list)} places. No places left to visit. Why not add a new place?")
+    else:
+        print(f"{len(csv_list)} places. You still want to visit {unvisited_count} places.")
 
 
 def open_file(filename):
