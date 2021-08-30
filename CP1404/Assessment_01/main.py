@@ -35,25 +35,51 @@ def main():
 
     while True:
         print(MENU_ITEMS)
-        user_selection = input(">>>").upper()
+        user_selection = input(">>> ").upper()
         if user_selection == "L":
             list_places(csv_list)
         elif user_selection == "R":
-            pass
+            recommend_random_place(csv_list)
         elif user_selection == "A":
             pass
         elif user_selection == "M":
-            pass
+            list_places(csv_list)
+            mark_place_visited(csv_list)
         elif user_selection == "Q":
             break
         else:
             print("Invalid menu choice")
 
 
+def mark_place_visited(csv_list):
+    sorted_csv = sort_places(csv_list)
+    print("Enter the number of a place to mark as visited")
+    while True:
+        user_selection = input(">>> ")
+        try:
+            user_selection = int(user_selection)
+        except ValueError:
+            print("Invalid input; enter a valid number")
+            continue
+        if user_selection <= 0:
+            print("Number must be > 0")
+            continue
+        if user_selection > len(sorted_csv):
+            print("Invalid place number")
+            continue
+        if sorted_csv[user_selection - 1][VISITED_INDEX] == "n":
+            sorted_csv[user_selection - 1][VISITED_INDEX] = "v"
+            print(f"{sorted_csv[user_selection - 1][NAME_INDEX]} in {sorted_csv[user_selection - 1][COUNTRY_INDEX]} visited!")
+        else:
+            print(f"You have already visited {sorted_csv[user_selection - 1][NAME_INDEX]}")
+            break
+
+
 def recommend_random_place(csv_list):
     unvisited_place = [unvisited_place for unvisited_place in csv_list if unvisited_place[VISITED_INDEX] == "n"]
     chosen_place = random.choice(unvisited_place)
-    print(f"{chosen_place}")
+    print("Not sure where to visit next?")
+    print(f"How about... {chosen_place[NAME_INDEX]} in {chosen_place[COUNTRY_INDEX]}?")
 
 
 def sort_places(csv_list):
@@ -89,7 +115,7 @@ def list_places(csv_list):
             unvisited_count += 1
         else:
             visited_visual = ""
-        print(f"{visited_visual:1} {index:{len(str(len(csv_list)))}}. "
+        print(f"{visited_visual:1} {index + 1:{len(str(len(csv_list)))}}. "
               f"{item[NAME_INDEX]:{length_of_longest_item(csv_list, NAME_INDEX)}} in "
               f"{item[COUNTRY_INDEX]:{length_of_longest_item(csv_list, COUNTRY_INDEX)}} "
               f"{item[PRIORITY_INDEX]:>{length_of_longest_item(csv_list, PRIORITY_INDEX)}}")
