@@ -59,6 +59,7 @@ def main():
             user_selection = input(">>> ").upper()
         print(f"{len(places)} places saved to {CSV_FILENAME}")
         print("Have a nice day :)")
+        places = sort_places(places)
         csv_file.seek(0)
         csv_file.truncate()
         csv_writer.writerows(places)
@@ -106,7 +107,7 @@ def total_unvisited_places(places):
 
 
 def mark_place_visited(places):
-    sorted_csv = sort_places(places)
+    places = sort_places(places)
     print("Enter the number of a place to mark as visited")
     input_error = True
     while input_error:
@@ -117,15 +118,15 @@ def mark_place_visited(places):
             print("Invalid input; enter a valid number")
         else:
             if user_selection > 0:
-                if user_selection <= len(sorted_csv):
-                    if sorted_csv[user_selection - 1][VISITED_INDEX] == UNVISITED_PREFIX:
-                        place_in_csv_list = places.index(sorted_csv[user_selection - 1])
+                if user_selection <= len(places):
+                    if places[user_selection - 1][VISITED_INDEX] == UNVISITED_PREFIX:
+                        place_in_csv_list = places.index(places[user_selection - 1])
                         places[place_in_csv_list][VISITED_INDEX] = VISITED_PREFIX
-                        print(f"{sorted_csv[user_selection - 1][NAME_INDEX]} in "
-                              f"{sorted_csv[user_selection - 1][COUNTRY_INDEX]} visited!")
+                        print(f"{places[user_selection - 1][NAME_INDEX]} in "
+                              f"{places[user_selection - 1][COUNTRY_INDEX]} visited!")
                         return places
                     else:
-                        print(f"You have already visited {sorted_csv[user_selection - 1][NAME_INDEX]}")
+                        print(f"You have already visited {places[user_selection - 1][NAME_INDEX]}")
                         return places
                 else:
                     print("Invalid place number")
@@ -150,9 +151,9 @@ def length_of_longest_item(places, index):
 
 
 def list_places(places):
-    sorted_csv = sort_places(places)
+    places = sort_places(places)
     unvisited_count = 0
-    for index, item in enumerate(sorted_csv):
+    for index, item in enumerate(places):
         if item[VISITED_INDEX] == UNVISITED_PREFIX:
             visited_indicator = "*"
             unvisited_count += 1
