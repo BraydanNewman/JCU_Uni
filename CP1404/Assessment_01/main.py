@@ -67,6 +67,7 @@ def main():
 
 
 def input_int_type(prompt):
+    """Get correct user input and convert to int above 0"""
     user_input = error_check_user_input(prompt).strip()
     input_error = True
     while input_error:
@@ -79,6 +80,7 @@ def input_int_type(prompt):
 
 
 def add_new_place(places):
+    """Add new place to places list"""
     name = error_check_user_input("Name: ")
     country = error_check_user_input("Country: ")
     priority = input_int_type("Priority: ")
@@ -88,6 +90,7 @@ def add_new_place(places):
 
 
 def error_check_user_input(prompt):
+    """Check user input for being blank"""
     user_input = input(prompt)
     while user_input == "":
         if user_input != "":
@@ -99,6 +102,7 @@ def error_check_user_input(prompt):
 
 
 def total_unvisited_places(places):
+    """Count unvisited places"""
     count = 0
     for place in places:
         if place[VISITED_INDEX] == UNVISITED_PREFIX:
@@ -107,6 +111,7 @@ def total_unvisited_places(places):
 
 
 def mark_place_visited(places):
+    """Change user selected place to visited"""
     places = sort_places(places)
     print("Enter the number of a place to mark as visited")
     input_error = True
@@ -135,6 +140,7 @@ def mark_place_visited(places):
 
 
 def recommend_random_place(places):
+    """Recommend random place to user"""
     unvisited_place = [unvisited_place for unvisited_place in places
                        if unvisited_place[VISITED_INDEX] == UNVISITED_PREFIX]
     chosen_place = random.choice(unvisited_place)
@@ -143,14 +149,17 @@ def recommend_random_place(places):
 
 
 def sort_places(places):
+    """Sort and return list of places"""
     return sorted(places, key=itemgetter(VISITED_INDEX, PRIORITY_INDEX))
 
 
 def length_of_longest_item(places, index):
+    """Get length of longest item in list"""
     return len(max([str(row[index]) for row in places], key=len))
 
 
 def list_places(places):
+    """Display all places in list"""
     places = sort_places(places)
     unvisited_count = 0
     for index, item in enumerate(places):
@@ -170,6 +179,7 @@ def list_places(places):
 
 
 def convert_priority_to_int(places):
+    """Convert place priority to int type"""
     for i in range(len(places)):
         places[i][PRIORITY_INDEX] = int(places[i][PRIORITY_INDEX])
     return places
